@@ -2,16 +2,21 @@ const coffee = require("./coffee.js");
 
 console.log(coffee);
 
+for (let i = 0; i < coffee.length; i++) {
+  const element = coffee[i];
+  console.log(`This is called ${element.name} it costs ${element.price} `);
+}
+
 // Iterate over entire array with corresponding index
 coffee.forEach((element, index) => {
   console.log(
-    `this is the elements name:${element.name} and it's index:${index}`
+    `This is called ${element.name} it costs ${element.price} and here is the index ${index}`
   );
 });
 
 // You can also do a foreach in one line if the logic is really short
-// And no need for parenthesis around parameter if only one parameter 
-coffee.forEach(element => console.log(element.seasonal));
+// And no need for parenthesis around parameter if only one parameter
+coffee.forEach((element) => console.log(element.seasonal));
 
 // Foreach does not work with a return element
 const element = coffee.forEach((element, index) => {
@@ -19,7 +24,7 @@ const element = coffee.forEach((element, index) => {
     return element;
   }
 });
-console.log(element)
+console.log(element);
 
 // Sort by price ascending, the subtraction causes a true false operation if it needs to be sorted
 const sortedByPriceAsc = coffee.sort((a, b) => a.price - b.price);
