@@ -9,6 +9,18 @@ coffee.forEach((element, index) => {
   );
 });
 
+// You can also do a foreach in one line if the logic is really short
+// And no need for parenthesis around parameter if only one parameter 
+coffee.forEach(element => console.log(element.seasonal));
+
+// Foreach does not work with a return element
+const element = coffee.forEach((element, index) => {
+  if (index === 2) {
+    return element;
+  }
+});
+console.log(element)
+
 // Sort by price ascending, the subtraction causes a true false operation if it needs to be sorted
 const sortedByPriceAsc = coffee.sort((a, b) => a.price - b.price);
 console.log(sortedByPriceAsc);
@@ -57,9 +69,9 @@ const scopeMethod = (scope) => {
   console.log(innerVariable);
   if (true) {
     const innerBlock = "This will only exist in the if statement";
-    console.log(innerBlock)
+    console.log(innerBlock);
   }
-//   console.log(innerBlock)
+  //   console.log(innerBlock)
   return `This is in the method ${scope}`;
 };
 
