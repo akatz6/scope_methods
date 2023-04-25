@@ -30,7 +30,7 @@ console.log(element);
 const sortedByPriceAsc = coffee.sort((a, b) => a.price - b.price);
 console.log(sortedByPriceAsc);
 
-const sortedByPriceDesc = coffee.sort((a, b) => b.price - a.price);
+const sortedByPriceDesc = coffee.sort((a, b) => b.price < a.price);
 console.log(sortedByPriceDesc);
 
 // With non numeric you need to return a true false value
